@@ -29,6 +29,14 @@ public class Delegator {
     }
 
     public int livesCount(char[][] array) {
-        return 0;
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if ('X' == array[i][j]) {
+                    count++;
+                }
+            }
+        }
+        return count;
     }
 }

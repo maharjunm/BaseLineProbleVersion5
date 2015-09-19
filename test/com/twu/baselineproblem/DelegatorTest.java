@@ -46,4 +46,12 @@ public class DelegatorTest {
 
         assertEquals(0, delegator.livesCount(array));
     }
+
+    @Test
+    public void shouldReturnCountOfLivesWhenWePassArray() {
+        Delegator delegator = new Delegator();
+        char[][] array = {{'-', 'X', '-'}};
+
+        assertEquals(1, delegator.livesCount(array));
+    }
 }
