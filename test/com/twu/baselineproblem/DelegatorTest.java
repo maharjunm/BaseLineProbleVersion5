@@ -1,6 +1,5 @@
 package com.twu.baselineproblem;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -30,5 +29,15 @@ public class DelegatorTest {
         int[] result = {1, 2};
 
         assertArrayEquals(result, delegator.diesCount(array));
+    }
+
+    @Test
+    public void shouldReturnTheArrayOfAdjecentLivesAndDiesWhenWePassArray() {
+        Delegator delegator = new Delegator();
+        char[][] array = {{'X', 'X'}};
+        int[] index = {0, 0};
+        char[] result = {'X'};
+
+        assertArrayEquals(result, delegator.AdjecentValues(index, array));
     }
 }
