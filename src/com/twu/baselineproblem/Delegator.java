@@ -27,4 +27,8 @@ public class Delegator {
         }
         return count;
     }
+
+    public int livesCount(char[][] array) {
+        return 0;
+    }
 }
