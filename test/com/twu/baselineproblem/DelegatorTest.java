@@ -86,4 +86,13 @@ public class DelegatorTest {
 
         assertEquals('X', delegator.nextTransition(cell, countOfTypes));
     }
+
+    @Test
+    public void shouldReturnTheNextTransionAsAsLiveCellWhenLiveCellCountIsExactly3() {
+        Delegator delegator = new Delegator();
+        char cell = '-';
+        int[] countOfTypes = {3, 1};
+
+        assertEquals('X', delegator.nextTransition(cell, countOfTypes));
+    }
 }
