@@ -30,4 +30,12 @@ public class DelegatorTest {
 
         assertEquals(0, delegator.diesCount(array));
     }
+
+    @Test
+    public void shouldReturnCountOfDies() {
+        Delegator delegator = new Delegator();
+        char[][] array = {{'-', 'X', '-'}};
+
+        assertEquals(2, delegator.diesCount(array));
+    }
 }
