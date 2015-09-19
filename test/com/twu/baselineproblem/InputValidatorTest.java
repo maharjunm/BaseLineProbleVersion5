@@ -77,4 +77,15 @@ public class InputValidatorTest {
         assertTrue(inputValidator.validate(userInput.getInput()));
     }
 
+    @Test
+    public void shouldReturnFalseWhenTwoLineIncorrectString() throws IOException {
+
+        UserInput userInput = mock(UserInput.class);
+        InputValidator inputValidator = new InputValidator(userInput);
+
+        when(userInput.getInput()).thenReturn("-X-\n---\nadsf");
+
+        assertFalse(inputValidator.validate(userInput.getInput()));
+    }
+
 }
