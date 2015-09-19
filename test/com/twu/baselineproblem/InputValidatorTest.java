@@ -33,4 +33,15 @@ public class InputValidatorTest {
         assertTrue(inputValidator.validate(userInput.getInput()));
     }
 
+    @Test
+    public void shouldReturnTrueWhenUserEntersOnlyDies() throws IOException {
+
+        UserInput userInput = mock(UserInput.class);
+        InputValidator inputValidator = new InputValidator(userInput);
+
+        when(userInput.getInput()).thenReturn("---");
+
+        assertTrue(inputValidator.validate(userInput.getInput()));
+    }
+
 }
