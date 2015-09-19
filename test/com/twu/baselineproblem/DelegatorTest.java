@@ -120,4 +120,13 @@ public class DelegatorTest {
 
         assertEquals(output, delegator.output(input));
     }
+
+    @Test
+    public void shouldReturnTheOutputForToadPattern() {
+        Delegator delegator = new Delegator();
+        String input = "----\n-XXX\nXXX-\n----";
+        String output = "--X-\nX--X\nX--X\n-X--";
+
+        assertEquals(output, delegator.output(input));
+    }
 }
