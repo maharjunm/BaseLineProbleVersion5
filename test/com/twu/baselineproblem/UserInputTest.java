@@ -20,4 +20,15 @@ public class UserInputTest {
 
         assertEquals("Maharjun", userInput.getInput());
     }
+
+    @Test
+    public void shouldTakeTwoLinesInputFromTheUser() throws IOException {
+
+        BufferedReader bufferedReader = mock(BufferedReader.class);
+        UserInput userInput = new UserInput(bufferedReader);
+
+        when(bufferedReader.readLine()).thenReturn("Maharjun").thenReturn("Maharjun").thenReturn("");
+
+        assertEquals("Maharjun\nMaharjun", userInput.getInput());
+    }
 }

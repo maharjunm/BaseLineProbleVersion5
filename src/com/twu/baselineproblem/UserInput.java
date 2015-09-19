@@ -13,7 +13,11 @@ public class UserInput {
     }
 
     public String getInput() throws IOException {
-        String input = bufferedReader.readLine();
-        return input;
+        String output = "";
+        String input;
+        while (!(input = bufferedReader.readLine()).equals("")) {
+            output += input + "\n";
+        }
+        return output.substring(0, output.length() - 1);
     }
 }
