@@ -103,4 +103,12 @@ public class DelegatorTest {
 
         assertEquals(input, delegator.output(input));
     }
+
+    @Test
+    public void shouldReturnTheOutputAsSameForBoatPattern() {
+        Delegator delegator = new Delegator();
+        String input = "XX-\nX-X\n-X-";
+
+        assertEquals(input, delegator.output(input));
+    }
 }
