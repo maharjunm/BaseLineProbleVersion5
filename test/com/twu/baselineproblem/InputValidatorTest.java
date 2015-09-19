@@ -44,4 +44,15 @@ public class InputValidatorTest {
         assertTrue(inputValidator.validate(userInput.getInput()));
     }
 
+    @Test
+    public void shouldReturnTrueWhenUserEntersWithDiesAndLives() throws IOException {
+
+        UserInput userInput = mock(UserInput.class);
+        InputValidator inputValidator = new InputValidator(userInput);
+
+        when(userInput.getInput()).thenReturn("-X-");
+
+        assertTrue(inputValidator.validate(userInput.getInput()));
+    }
+
 }
