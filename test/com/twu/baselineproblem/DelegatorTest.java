@@ -22,4 +22,12 @@ public class DelegatorTest {
 
         assertArrayEquals(array, delegator.split("XXX"));
     }
+
+    @Test
+    public void shouldReturnCountOfDiesAsZeroWhenWePassEmptyArray() {
+        Delegator delegator = new Delegator();
+        char[][] array = {{}};
+
+        assertEquals(0, delegator.diesCount(array));
+    }
 }

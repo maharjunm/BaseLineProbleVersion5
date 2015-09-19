@@ -15,4 +15,8 @@ public class Delegator {
 
         return result;
     }
+
+    public int diesCount(char[][] array) {
+        return 0;
+    }
 }
