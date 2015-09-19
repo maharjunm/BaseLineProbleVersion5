@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class Delegator {
 
+
+
     public char[][] split(String input) {
         String[] list = input.split("\n");
         char[][] result = new char[list.length][list[0].length()];
