@@ -24,34 +24,11 @@ public class DelegatorTest {
     }
 
     @Test
-    public void shouldReturnCountOfDiesAsZeroWhenWePassEmptyArray() {
-        Delegator delegator = new Delegator();
-        char[][] array = {{}};
-
-        assertEquals(0, delegator.diesCount(array));
-    }
-
-    @Test
-    public void shouldReturnCountOfDiesWhenWePassArray() {
+    public void shouldReturnTheArrayOfLivesAndDiesWhenWePassArray() {
         Delegator delegator = new Delegator();
         char[][] array = {{'-', 'X', '-'}};
+        int[] result = {1, 2};
 
-        assertEquals(2, delegator.diesCount(array));
-    }
-
-    @Test
-    public void shouldReturnCountOfLivesAsZeroWhenWePassEmptyArray() {
-        Delegator delegator = new Delegator();
-        char[][] array = {{}};
-
-        assertEquals(0, delegator.livesCount(array));
-    }
-
-    @Test
-    public void shouldReturnCountOfLivesWhenWePassArray() {
-        Delegator delegator = new Delegator();
-        char[][] array = {{'-', 'X', '-'}};
-
-        assertEquals(1, delegator.livesCount(array));
+        assertArrayEquals(result, delegator.diesCount(array));
     }
 }

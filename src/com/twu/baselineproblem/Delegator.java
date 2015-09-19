@@ -16,27 +16,20 @@ public class Delegator {
         return result;
     }
 
-    public int diesCount(char[][] array) {
-        int count = 0;
+    public int[] diesCount(char[][] array) {
+        int livesCount = 0;
+        int diesCount = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if ('-' == array[i][j]) {
-                    count++;
+                    diesCount++;
                 }
-            }
-        }
-        return count;
-    }
-
-    public int livesCount(char[][] array) {
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
                 if ('X' == array[i][j]) {
-                    count++;
+                    livesCount++;
                 }
             }
         }
-        return count;
+        int result[] = {livesCount, diesCount};
+        return result;
     }
 }
