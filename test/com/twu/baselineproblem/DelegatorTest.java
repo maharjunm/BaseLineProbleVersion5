@@ -50,4 +50,13 @@ public class DelegatorTest {
 
         assertArrayEquals(result, delegator.AdjecentValues(index, array));
     }
+
+    @Test
+    public void shouldReturnTheNextTransionAsDiesWhenLiveCellHasLeastNumberOfLiveCells() {
+        Delegator delegator = new Delegator();
+        char cell = 'X';
+        int[] countOfTypes = {1, 1};
+
+        assertEquals('-', delegator.nextTransition(cell, countOfTypes));
+    }
 }

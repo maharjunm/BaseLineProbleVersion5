@@ -54,4 +54,8 @@ public class Delegator {
         return charArray;
 
     }
+
+    public char nextTransition(char cell, int[] countOfTypes) {
+            return '-';
+    }
 }
