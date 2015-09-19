@@ -12,6 +12,14 @@ public class DelegatorTest {
         Delegator delegator = new Delegator();
         char[][] array = {};
 
+        assertArrayEquals(array, delegator.split(""));
+    }
+
+    @Test
+    public void shouldReturnTheTwoDimensionalArray() {
+        Delegator delegator = new Delegator();
+        char[][] array = {{'X', 'X', 'X'}};
+
         assertArrayEquals(array, delegator.split("XXX"));
     }
 }
