@@ -56,6 +56,8 @@ public class Delegator {
     }
 
     public char nextTransition(char cell, int[] countOfTypes) {
-            return '-';
+        if (countOfTypes[0] == 2)
+            return cell;
+        return '-';
     }
 }
