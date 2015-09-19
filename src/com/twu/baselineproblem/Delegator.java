@@ -62,4 +62,8 @@ public class Delegator {
             return cell;
         return '-';
     }
+
+    public String output(String input) {
+        return input;
+    }
 }

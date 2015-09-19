@@ -95,4 +95,12 @@ public class DelegatorTest {
 
         assertEquals('X', delegator.nextTransition(cell, countOfTypes));
     }
+
+    @Test
+    public void shouldReturnTheOutput() {
+        Delegator delegator = new Delegator();
+        String input = "XX\nXX";
+
+        assertEquals(input, delegator.output(input));
+    }
 }
