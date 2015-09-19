@@ -6,6 +6,11 @@ import java.util.ArrayList;
 public class Delegator {
 
 
+    private String input;
+
+    public Delegator(String input) {
+        this.input = input;
+    }
 
     public char[][] split(String input) {
         String[] list = input.split("\n");
@@ -63,7 +68,7 @@ public class Delegator {
         return '-';
     }
 
-    public String output(String input) {
+    public String output() {
         String output = "";
         char[][] list = split(input);
         for (int i = 0; i < list.length; i++) {

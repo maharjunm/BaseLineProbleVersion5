@@ -8,7 +8,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheEmptyTwoDimensionalArray() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char[][] array = {{}};
 
         assertArrayEquals(array, delegator.split(""));
@@ -16,7 +16,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheTwoDimensionalArray() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char[][] array = {{'X', 'X', 'X'}};
 
         assertArrayEquals(array, delegator.split("XXX"));
@@ -24,7 +24,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheArrayOfLivesAndDiesWhenWePassArray() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char[] array = {'-', 'X', '-'};
         int[] result = {1, 2};
 
@@ -33,7 +33,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheArrayOfAdjecentLivesAndDiesWhenWePassArray() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char[][] array = {{'X', 'X'}};
         int[] index = {0, 0};
         char[] result = {'X'};
@@ -43,7 +43,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheArrayOfAdjecentLivesAndDiesWhenWePassTwoDimensionalArray() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char[][] array = {{'X', 'X', '-'}, {'-', 'X', '-'}};
         int[] index = {0, 0};
         char[] result = {'X', '-', 'X'};
@@ -53,7 +53,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheNextTransionAsDiesWhenLiveCellHasLeastNumberOfLiveCells() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char cell = 'X';
         int[] countOfTypes = {1, 1};
 
@@ -62,7 +62,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheNextTransionAsDiesWhenLiveCellHAsMoreThan3LiveCells() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char cell = 'X';
         int[] countOfTypes = {4, 1};
 
@@ -71,7 +71,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheNextTransionAsAsSameWhenLiveCellAs2() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char cell = 'X';
         int[] countOfTypes = {2, 1};
 
@@ -80,7 +80,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheNextTransionAsAsSameWhenLiveCellAs3() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char cell = 'X';
         int[] countOfTypes = {3, 1};
 
@@ -89,7 +89,7 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheNextTransionAsAsLiveCellWhenLiveCellCountIsExactly3() {
-        Delegator delegator = new Delegator();
+        Delegator delegator = new Delegator("");
         char cell = '-';
         int[] countOfTypes = {3, 1};
 
@@ -98,35 +98,35 @@ public class DelegatorTest {
 
     @Test
     public void shouldReturnTheOutput() {
-        Delegator delegator = new Delegator();
         String input = "XX\nXX";
+        Delegator delegator = new Delegator(input);
 
-        assertEquals(input, delegator.output(input));
+        assertEquals(input, delegator.output());
     }
 
     @Test
     public void shouldReturnTheOutputAsSameForBoatPattern() {
-        Delegator delegator = new Delegator();
         String input = "XX-\nX-X\n-X-";
+        Delegator delegator = new Delegator(input);
 
-        assertEquals(input, delegator.output(input));
+        assertEquals(input, delegator.output());
     }
 
     @Test
     public void shouldReturnTheOutputForBlinkerPattern() {
-        Delegator delegator = new Delegator();
         String input = "-X-\n-X-\n-X-";
+        Delegator delegator = new Delegator(input);
         String output = "---\nXXX\n---";
 
-        assertEquals(output, delegator.output(input));
+        assertEquals(output, delegator.output());
     }
 
     @Test
     public void shouldReturnTheOutputForToadPattern() {
-        Delegator delegator = new Delegator();
         String input = "----\n-XXX\nXXX-\n----";
+        Delegator delegator = new Delegator(input);
         String output = "--X-\nX--X\nX--X\n-X--";
 
-        assertEquals(output, delegator.output(input));
+        assertEquals(output, delegator.output());
     }
 }
