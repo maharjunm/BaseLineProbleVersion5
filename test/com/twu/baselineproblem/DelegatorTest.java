@@ -59,4 +59,13 @@ public class DelegatorTest {
 
         assertEquals('-', delegator.nextTransition(cell, countOfTypes));
     }
+
+    @Test
+    public void shouldReturnTheNextTransionAsDiesWhenLiveCellHAsMoreThan3LiveCells() {
+        Delegator delegator = new Delegator();
+        char cell = 'X';
+        int[] countOfTypes = {1, 4};
+
+        assertEquals('-', delegator.nextTransition(cell, countOfTypes));
+    }
 }
