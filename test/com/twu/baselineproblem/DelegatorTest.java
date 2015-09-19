@@ -70,10 +70,19 @@ public class DelegatorTest {
     }
 
     @Test
-    public void shouldReturnTheNextTransionAsAsSameWhenLiveCellHas2() {
+    public void shouldReturnTheNextTransionAsAsSameWhenLiveCellAs2() {
         Delegator delegator = new Delegator();
         char cell = 'X';
         int[] countOfTypes = {2, 1};
+
+        assertEquals('X', delegator.nextTransition(cell, countOfTypes));
+    }
+
+    @Test
+    public void shouldReturnTheNextTransionAsAsSameWhenLiveCellAs3() {
+        Delegator delegator = new Delegator();
+        char cell = 'X';
+        int[] countOfTypes = {3, 1};
 
         assertEquals('X', delegator.nextTransition(cell, countOfTypes));
     }
