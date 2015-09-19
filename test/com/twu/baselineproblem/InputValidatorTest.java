@@ -12,7 +12,7 @@ import static org.mockito.Mockito.when;
 public class InputValidatorTest {
 
     @Test
-    public void shouldReturnInvalidInputMessageWhenUserEntersEmptyString() throws IOException {
+    public void shouldReturnFalseWhenUserEntersEmptyString() throws IOException {
 
         UserInput userInput = mock(UserInput.class);
         InputValidator inputValidator = new InputValidator(userInput);
@@ -22,5 +22,15 @@ public class InputValidatorTest {
         assertFalse(inputValidator.validate(userInput.getInput()));
     }
 
+    @Test
+    public void shouldReturnTrueWhenUserEntersOnlyLives() throws IOException {
+
+        UserInput userInput = mock(UserInput.class);
+        InputValidator inputValidator = new InputValidator(userInput);
+
+        when(userInput.getInput()).thenReturn("XXX");
+
+        assertTrue(inputValidator.validate(userInput.getInput()));
+    }
 
 }

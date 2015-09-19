@@ -10,6 +10,14 @@ public class InputValidator {
     }
 
     public boolean validate(String input) {
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == 'X') {
+                count++;
+            }
+        }
+        if (count == input.length())
+            return true;
         return false;
     }
 }
