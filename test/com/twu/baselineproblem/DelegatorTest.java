@@ -9,7 +9,7 @@ public class DelegatorTest {
     @Test
     public void shouldReturnTheEmptyTwoDimensionalArray() {
         Delegator delegator = new Delegator();
-        char[][] array = {};
+        char[][] array = {{}};
 
         assertArrayEquals(array, delegator.split(""));
     }
@@ -25,10 +25,10 @@ public class DelegatorTest {
     @Test
     public void shouldReturnTheArrayOfLivesAndDiesWhenWePassArray() {
         Delegator delegator = new Delegator();
-        char[][] array = {{'-', 'X', '-'}};
+        char[] array = {'-', 'X', '-'};
         int[] result = {1, 2};
 
-        assertArrayEquals(result, delegator.diesCount(array));
+        assertArrayEquals(result, delegator.countOfDiesAndLives(array));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class DelegatorTest {
         int[] index = {0, 0};
         char[] result = {'X'};
 
-        assertArrayEquals(result, delegator.AdjecentValues(index, array));
+        assertArrayEquals(result, delegator.adjecentValues(index, array));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class DelegatorTest {
         int[] index = {0, 0};
         char[] result = {'X', '-', 'X'};
 
-        assertArrayEquals(result, delegator.AdjecentValues(index, array));
+        assertArrayEquals(result, delegator.adjecentValues(index, array));
     }
 
     @Test
@@ -110,5 +110,14 @@ public class DelegatorTest {
         String input = "XX-\nX-X\n-X-";
 
         assertEquals(input, delegator.output(input));
+    }
+
+    @Test
+    public void shouldReturnTheOutputForBlinkerPattern() {
+        Delegator delegator = new Delegator();
+        String input = "-X-\n-X-\n-X-";
+        String output = "---\nXXX\n---";
+
+        assertEquals(output, delegator.output(input));
     }
 }

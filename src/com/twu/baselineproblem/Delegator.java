@@ -18,24 +18,22 @@ public class Delegator {
         return result;
     }
 
-    public int[] diesCount(char[][] array) {
+    public int[] countOfDiesAndLives(char[] array) {
         int livesCount = 0;
         int diesCount = 0;
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if ('-' == array[i][j]) {
-                    diesCount++;
-                }
-                if ('X' == array[i][j]) {
-                    livesCount++;
-                }
+            if ('-' == array[i]) {
+                diesCount++;
+            }
+            if ('X' == array[i]) {
+                livesCount++;
             }
         }
         int result[] = {livesCount, diesCount};
         return result;
     }
 
-    public char[] AdjecentValues(int[] index, char[][] array) {
+    public char[] adjecentValues(int[] index, char[][] array) {
         int[][] list = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
         int firstIndex = index[0];
         int secondIndex = index[1];
@@ -64,6 +62,19 @@ public class Delegator {
     }
 
     public String output(String input) {
-        return input;
+        String output = "";
+        char[][] list = split(input);
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list[i].length; j++) {
+                int[] index = {i, j};
+                char[] charArray = adjecentValues(index, list);
+                int[] countValue = countOfDiesAndLives(charArray);
+                char nextTransition = nextTransition(list[i][j], countValue);
+                output += nextTransition;
+            }
+            output += "\n";
+        }
+
+        return output.substring(0, output.length() - 1);
     }
 }
