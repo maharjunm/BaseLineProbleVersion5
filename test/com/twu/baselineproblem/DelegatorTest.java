@@ -40,4 +40,14 @@ public class DelegatorTest {
 
         assertArrayEquals(result, delegator.AdjecentValues(index, array));
     }
+
+    @Test
+    public void shouldReturnTheArrayOfAdjecentLivesAndDiesWhenWePassTwoDimensionalArray() {
+        Delegator delegator = new Delegator();
+        char[][] array = {{'X', 'X', '-'}, {'-', 'X', '-'}};
+        int[] index = {0, 0};
+        char[] result = {'X', '-', 'X'};
+
+        assertArrayEquals(result, delegator.AdjecentValues(index, array));
+    }
 }
